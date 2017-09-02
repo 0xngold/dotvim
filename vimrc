@@ -74,6 +74,7 @@ set colorcolumn=81
 set previewheight=6
 
 inoremap jk <Esc>
+noremap gd :YcmCompleter GoTo<CR>
 
 " Yank text to the system clipboard
 set clipboard=unnamed
