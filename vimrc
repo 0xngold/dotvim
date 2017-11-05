@@ -29,8 +29,8 @@ if ! has('gui_running')
     set ttimeoutlen=10
     augroup FastEscape
         autocmd!
-        au InsertEnter * set timeoutlen=150
-        au InsertLeave * set timeoutlen=150
+        au InsertEnter * set timeoutlen=200
+        au InsertLeave * set timeoutlen=200
     augroup END
 endif
 
