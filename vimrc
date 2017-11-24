@@ -10,12 +10,26 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'FooSoft/vim-argwrap'
+Plugin 'dezza/platform.vim'
 
 call vundle#end()
 filetype plugin indent on
 syntax on
+
+call platform#detect()
+
+" WSL fixes
+if platform == 'Linux' && distro == 'WSL'
+    set t_ut=
+    set background=dark
+    colorscheme gruvbox
+else
+    set background=dark
+    colorscheme solarized
+endif
 
 " Powerline
 python3 from powerline.vim import setup as powerline_setup
@@ -53,10 +67,6 @@ nnoremap tt :ArgWrap<CR>
 
 " Keep JSHint's error list small 
 let jshint2_height = 20
-
-" Colors
-set background=dark
-colorscheme solarized
 
 " Tabs
 set smartindent
